@@ -6,7 +6,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans]
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        baloo:['Baloo 2'],
+        passion:['Passion one']
       },
       animation: {
         bounce200: 'bounce 1s infinite 200ms',
@@ -28,6 +30,11 @@ module.exports = {
         background: colors.white,
         // Form text
         form: colors.gray
+      },
+      screens:{
+        'mid':'970px',
+        'small':'570px',
+        's':'450px'
       }
     }
   },

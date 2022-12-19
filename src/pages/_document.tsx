@@ -17,7 +17,11 @@ export default class CustomDocument extends Document {
   render() {
     return (
       <Html lang={locale}>
-        <Head />
+        <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='true'/>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet"/>
+        </Head>
         <body className="antialiased font-sans">
           <Main />
           <NextScript />

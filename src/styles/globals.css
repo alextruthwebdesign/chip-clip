@@ -48,3 +48,225 @@
 }
 
 .grecaptcha-badge { visibility: hidden; }
+
+
+:root{
+  --btnPrimary:#FFC943;
+  --btnSecondary:#222222;
+}
+
+
+h1,h2,h3,h4,h5,h6,a,button {
+   font-family: 'Passion One';
+}
+
+
+p{
+  font-family: 'Baloo 2';
+}
+
+
+.header-container{
+  @apply max-w-[1400px] mx-auto flex items-center justify-between; 
+}
+
+.header{
+  @apply hidden items-center gap-x-[30px];
+  @screen mid {
+    @apply flex;
+  }
+}
+
+.header a{
+  @apply text-[24px] uppercase text-[#222222] hover:text-[#686868] hover:underline;
+}
+
+.generalBtn{
+ @apply bg-[var(--btnPrimary)] rounded-[20px] uppercase text-white text-[24px] px-[40px] py-[10px];
+}
+
+
+.hamburger-menu{
+ @apply cursor-pointer block;
+ @screen mid {
+  @apply hidden;
+}
+}
+
+.secondaryBtn{
+  @apply bg-[var(--btnSecondary)] rounded-[20px] uppercase text-white text-[24px] px-[40px] py-[10px];
+ }
+
+.mobile-menu{
+  @apply hidden flex-col items-center fixed w-full h-full top-0 left-0 bg-[#FFC943] pt-[80px] uppercase gap-y-[30px];
+  a{
+    @apply text-[24px];
+  }
+
+  @screen mid {
+    @apply hidden;
+  }
+}
+
+
+.closeMenu{
+  @apply absolute right-[33px] top-[78px] cursor-pointer;
+}
+
+.hero{
+  @apply flex flex-col text-center items-center max-w-[1400px] mx-auto gap-x-[50px] gap-y-[80px] justify-between;
+  @screen lg {
+    @apply flex-row;
+  }
+  @screen sm {
+    @apply text-left;
+  }
+  h1{ 
+    @apply text-[84px] leading-[75px] text-[#FFC943] uppercase pt-[100px];
+  }
+  p{
+    @apply mt-[30px] text-[#686868] text-[20px];
+  }
+}
+.hero div:first-of-type{
+  @apply max-w-[560px];
+}
+
+
+.group-container{
+  @apply flex text-center flex-col max-w-[1400px] mx-auto items-center gap-x-[150px] gap-y-[80px];
+  @screen lg {
+    @apply flex-row;
+  }
+  @screen sm {
+    @apply text-left;
+  }
+}
+
+.group-images{
+  @apply flex flex-col gap-[70px] items-center;
+  @screen small {
+    @apply flex-row;
+  }
+}
+
+.group-text-right{
+  @apply max-w-[400px]
+}
+
+.group-title{
+  @apply text-[48px] font-passion uppercase mb-[20px];
+}
+
+.group-text-right :not(.group-title,button){
+  @apply text-[#686868] mb-[30px] text-[20px];
+}
+
+
+
+.group-container-left{
+  @apply flex flex-col text-center max-w-[1300px] mx-auto items-center justify-between gap-x-[50px] gap-y-[80px]; 
+  @screen lg {
+    @apply flex-row;
+  }
+  @screen sm {
+    @apply text-left;
+  }
+}
+
+.group-text-left{
+  @apply max-w-[480px];
+}
+
+.group-text-left :not(.group-title-left,button){
+  @apply text-[#686868] mb-[30px] text-[20px];
+}
+
+.group-title-left{
+  @apply text-[48px] font-passion uppercase mb-[20px];
+}
+
+.cta{
+  @apply px-[50px] relative text-center max-w-[1400px] mx-auto bg-[#FFC943] rounded-[30px] flex flex-col items-center py-[100px] text-[#222222];
+
+ 
+}
+
+.ctaTitle{
+ @apply text-[30px] max-w-[700px] uppercase font-passion leading-[30px];
+ @screen md {
+  @apply text-[48px] leading-[43px];
+}
+} 
+
+.cta :not(.ctaTitle){
+  @apply text-[20px] max-w-[585px] mt-[30px] mb-[20px];
+}
+
+
+.ctaImages{
+  @apply hidden absolute w-[120px] h-[100px] top-[40%] translate-y-[-55%];
+  @screen small {
+    @apply block;
+  }
+}
+.ctaImages.left{
+  @apply left-[-100px];
+}
+
+.ctaImages.right{
+  @apply right-[-100px];
+}
+
+
+.gallery{
+  @apply max-w-[1400px] mx-auto flex flex-col gap-[30px];
+}
+
+.gallery-images{
+  @apply flex h-[860px] gap-[30px] flex-col;
+  @screen md{
+    @apply flex-row h-[360px];
+  }
+}
+
+
+.footer-container{
+  @apply flex flex-col items-center max-w-[1400px] mx-auto justify-between text-white gap-x-[30px] gap-y-[60px];
+  @screen mid{
+    @apply flex-row;
+  }
+}
+
+.footer-links{
+    @apply uppercase flex items-center flex-col gap-x-[30px] text-[24px];
+
+    @screen s{
+      @apply flex-row;
+    }
+}
+
+
+
+.socials div:first-of-type{
+  @apply flex flex-col gap-[30px] items-center;
+
+  @screen s{
+    @apply flex-row;
+  }
+
+  p{
+    @apply uppercase text-[24px] font-passion;
+  }
+ 
+}
+
+.socials > p{
+    @apply mt-[30px] text-center;
+    @screen mid{
+      @apply text-right;
+    }
+    span{
+      @apply font-bold
+    }
+}
