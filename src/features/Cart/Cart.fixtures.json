@@ -1,0 +1,32 @@
+{
+  "cartItems": [
+    {
+      "id": "prod_LPvslzaZA4bjRO",
+      "name": "Tea Kettle",
+      "description": "Cool!",
+      "href": "/product/prod_LPvslzaZA4bjRO",
+      "unitAmount": 9000,
+      "currency": "USD",
+      "quantity": 1,
+      "imageSrc": "/images/placeholders/random-tea-kettle.png",
+      "imageAlt": "A lovely silver tea kettle.",
+      "interval": "none",
+      "intervalCount": 0,
+      "data": {}
+    },
+    {
+      "id": "prod_LNjQn6SmhBfhkT",
+      "name": "Silver Fork",
+      "description": "Cool!",
+      "href": "/product/prod_LNjQn6SmhBfhkT",
+      "unitAmount": 3200,
+      "currency": "USD",
+      "quantity": 1,
+      "imageSrc": "/images/placeholders/random-fork.png",
+      "imageAlt": "A beautiful silver fork.",
+      "interval": "month",
+      "intervalCount": 1,
+      "data": {}
+    }
+  ]
+}
