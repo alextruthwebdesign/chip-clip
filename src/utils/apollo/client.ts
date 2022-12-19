@@ -53,10 +53,12 @@ function createApolloClient({
       );
     }
 
+    // console.log('networkError', networkError)
+
     if (networkError) {
       // When unauthenticated, redirect to sign in
       if ((networkError as ServerError).statusCode === 401 && !isSsr) {
-        window.location.href = '/api/auth/signin?error=SessionRequired';
+        // window.location.href = '/api/auth/signin?error=SessionRequired';
       }
 
       logger.error({

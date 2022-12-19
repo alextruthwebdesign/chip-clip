@@ -1,5 +1,6 @@
 import PageLoader from 'components/PageLoader';
-import { pageRevalidationTtl, reviewsIoReviewsPerPage, trustpilotReviewsPerPage } from 'config';
+// import { pageRevalidationTtl, reviewsIoReviewsPerPage, trustpilotReviewsPerPage } from 'config';
+import { pageRevalidationTtl, reviewsIoReviewsPerPage } from 'config';
 import { ProductPage as ProductPageComponent } from 'features/ProductPage/ProductPage';
 import {
   ProductPageShopifyProductHandlesQuery,
@@ -72,7 +73,6 @@ const apolloClient = createAnonymousTakeshapeApolloClient();
 
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   let handle = getSingle(params?.product);
-
   if (!handle) {
     throw new Error('Invalid getStaticProps params');
   }
@@ -84,8 +84,9 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
     query: ProductPageShopifyProductQuery,
     variables: {
       handle,
-      reviewsPerPage: reviewsIoReviewsPerPage,
-      trustpilotReviewsPerPage: trustpilotReviewsPerPage
+      reviewsPerPage: reviewsIoReviewsPerPage
+      // reviewsPerPage: reviewsIoReviewsPerPage,
+      // trustpilotReviewsPerPage: trustpilotReviewsPerPage
     }
   });
 

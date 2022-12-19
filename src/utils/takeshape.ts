@@ -37,6 +37,7 @@ export function useAuthenticatedClient() {
   useEffect(() => {
     if (session) {
       const clientToken = getClientToken({ clientId: 'takeshape', session });
+      // console.log('clientToken', clientToken)
       setClient(
         createClient({
           uri: takeshapeApiUrl,

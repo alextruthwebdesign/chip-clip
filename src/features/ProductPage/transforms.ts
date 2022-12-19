@@ -101,12 +101,15 @@ export function getTrustpilotProductReviewsPage(
 export function getTrustpilotProductReviews(
   response?: ProductPageShopifyProductResponse
 ): ProductPageReviewsReviewList | null {
-  if (!response?.product?.trustpilotReviews) {
-    return null;
-  }
-
-  const { trustpilotReviewsSummary, trustpilotReviews } = response?.product ?? {};
-  return getTrustpilotReviewList(trustpilotReviews, trustpilotReviewsSummary);
+  // To enable Trustpilot reviews follow the directions in /docs/trustpilot and
+  // remove the following statement and uncomment the lines below
+  return null;
+  // if (!response?.product?.trustpilotReviews) {
+  //   return null;
+  // }
+  //
+  // const { trustpilotReviewsSummary, trustpilotReviews } = response?.product ?? {};
+  // return getTrustpilotReviewList(trustpilotReviews, trustpilotReviewsSummary);
 }
 
 export function getReviewsIoProductReviews(
