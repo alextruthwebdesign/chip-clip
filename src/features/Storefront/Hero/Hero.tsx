@@ -6,6 +6,7 @@ import { StorefrontChild } from 'features/Storefront/types';
 type HeroProps = StorefrontChild & { __typename?: 'HeroComponent' };
 
 export const Hero = ({ primaryText, secondaryText, buttonText, image }: HeroProps) => {
+
   return (
     <div className="relative bg-body-50 pb-4 lg:pb-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:grid lg:grid-cols-2">

@@ -114,15 +114,15 @@ p{
 }
 
 .hero{
-  @apply flex flex-col text-center items-center max-w-[1400px] mx-auto gap-x-[50px] gap-y-[80px] justify-between;
+  @apply flex flex-col items-center text-center max-w-[1400px] mx-auto gap-x-[50px] gap-[80px] s:gap-y-[230px] justify-between;
   @screen lg {
-    @apply flex-row;
+    @apply flex-row items-start;
   }
   @screen sm {
     @apply text-left;
   }
   h1{ 
-    @apply text-[84px] leading-[75px] text-[#FFC943] uppercase pt-[100px];
+    @apply text-[84px] leading-[75px] text-[#FFC943] uppercase;
   }
   p{
     @apply mt-[30px] text-[#686868] text-[20px];
@@ -132,6 +132,20 @@ p{
   @apply max-w-[560px];
 }
 
+.heroImage{
+  @apply absolute top-[-185px] z-10 hidden;
+
+  @screen s{
+    @apply block;
+  }
+}
+
+.heroImage.left{
+  @apply left-[30px]
+}
+.heroImage.right{
+  @apply right-[30px]
+}
 
 .group-container{
   @apply flex text-center flex-col max-w-[1400px] mx-auto items-center gap-x-[150px] gap-y-[80px];
@@ -151,7 +165,7 @@ p{
 }
 
 .group-text-right{
-  @apply max-w-[400px]
+  @apply max-w-[450px]
 }
 
 .group-title{

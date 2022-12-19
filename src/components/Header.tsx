@@ -1,8 +1,12 @@
+import { HeaderType, Section } from "components/types/HeaderTypes";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-function Header(){
+
+
+
+function Header({ sections }:HeaderType){
     const [openMenu,setOpenMenu] = useState(false);
 
     return <div className="px-[30px]">
@@ -11,18 +15,11 @@ function Header(){
                 <Image src='/images/clip-logo.png' fill alt='logo'/>
             </div>
             <div className={`header`}>
-                <Link href='#'>
-                    home
+                {sections.map((section:any,index:number)=>{
+                    return  <Link href={section?.link?.href}key={index}>
+                   {section?.name}
                 </Link>
-                <Link href='#'>
-                    about
-                </Link>
-                <Link href='#'>
-                    product
-                </Link>
-                <Link href='#'>
-                    contact
-                </Link>
+                })}
                 <button className='generalBtn'>order now</button>
                 <svg width="47" height="37" viewBox="0 0 47 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 34.5C21 35.7435 22.008 36.75 23.25 36.75C24.492 36.75 25.5 35.7435 25.5 34.5C25.5 33.258 24.492 32.25 23.25 32.25C22.008 32.25 21 33.258 21 34.5ZM15.75 32.25C16.992 32.25 18 33.2565 18 34.5C18 35.7435 16.992 36.75 15.75 36.75C14.508 36.75 13.5 35.7435 13.5 34.5C13.5 33.258 14.508 32.25 15.75 32.25ZM6.294 6.75L11.4405 27.75H14.5935L10.782 11.25H36L29.0775 30.75H9.219L4.008 9.75H0.740997L0 6.75H6.294Z" fill="#222222"/>
@@ -34,18 +31,11 @@ function Header(){
                 <path d="M1 7H19M1 1H19M1 13H19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             <div style={{display:openMenu ? 'flex' : 'none'}} className={`mobile-menu`}>
-                <Link href='#'>
-                    home
+            {sections.map((section:Section,index:number)=>{
+                    return  <Link href={section?.link?.href || ''}key={index}>
+                   {section?.name}
                 </Link>
-                <Link href='#'>
-                    about
-                </Link>
-                <Link href='#'>
-                    product
-                </Link>
-                <Link href='#'>
-                    contact
-                </Link>
+                })}
                 <button className='secondaryBtn'>order now</button>
                 <svg width="47" height="37" viewBox="0 0 47 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 34.5C21 35.7435 22.008 36.75 23.25 36.75C24.492 36.75 25.5 35.7435 25.5 34.5C25.5 33.258 24.492 32.25 23.25 32.25C22.008 32.25 21 33.258 21 34.5ZM15.75 32.25C16.992 32.25 18 33.2565 18 34.5C18 35.7435 16.992 36.75 15.75 36.75C14.508 36.75 13.5 35.7435 13.5 34.5C13.5 33.258 14.508 32.25 15.75 32.25ZM6.294 6.75L11.4405 27.75H14.5935L10.782 11.25H36L29.0775 30.75H9.219L4.008 9.75H0.740997L0 6.75H6.294Z" fill="#222222"/>

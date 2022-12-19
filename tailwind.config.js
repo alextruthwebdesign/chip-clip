@@ -35,6 +35,9 @@ module.exports = {
         'mid':'970px',
         'small':'570px',
         's':'450px'
+      },
+      boxShadow:{
+        cardShadow:'15px 15px 0px #222222'
       }
     }
   },

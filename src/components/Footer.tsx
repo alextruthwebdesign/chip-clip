@@ -1,15 +1,18 @@
+import { FooterType, Section } from 'components/types/FooterTypes';
 import Link from 'next/link';
 
-function Footer() {
+function Footer({navigation}:FooterType) {
+
   return (
     <div className='py-[120px] px-[30px] bg-[#222222]'>
       <div className='footer-container'>
         <div>
           <div className='footer-links'>
-            <Link href="#">home</Link>
-            <Link href="#">about</Link>
-            <Link href="#">product</Link>
-            <Link href="#">contact</Link>
+            {navigation?.sections.map((item:Section,index:number)=>{
+          
+              return <Link key={index} href={item?.links[0]?.href || ''}>{item?.links[0]?.name}</Link>
+            })}
+           
           </div>
           <p className='mt-[30px] text-center mid:text-left'>Copyright 2022 Chip Clip Chain. All rights reserved</p>
         </div>
