@@ -1,13 +1,12 @@
+import Footer from 'components/Footer';
+import Header from 'components/Header';
 import Seo from 'components/Seo';
 import { Cart } from 'features/Cart/Cart';
 import { CartProvider } from 'features/Cart/CartProvider';
 import footerData from 'features/Footer/data.preval';
-import { Footer } from 'features/Footer/Footer';
 import navigationData from 'features/Navigation/data.preval';
-import { Navigation } from 'features/Navigation/Navigation';
 import { Notification } from 'features/Notification/Notification';
 import { QuickAddWithData } from 'features/QuickAdd/QuickAddWithData';
-import SearchModal from 'features/Search/Modal/Modal';
 import { NextSeoProps } from 'next-seo';
 import { PropsWithChildren } from 'react';
 
@@ -18,16 +17,11 @@ export interface LayoutProps {
 export const Layout = ({ children, seo }: PropsWithChildren<LayoutProps>) => {
   return (
     <CartProvider>
-      <div className="flex flex-col min-h-screen">
+      <div>
         <Seo {...seo} />
 
-        <SearchModal />
-        {navigationData && <Navigation {...navigationData} />}
-
-        <main id="content" className="flex flex-col grow bg-background">
+        {navigationData && <Header {...navigationData}/>}     
           {children}
-        </main>
-
         <Cart />
         <QuickAddWithData />
         <Notification />

@@ -2,6 +2,10 @@ import { NavigationQueryResponse } from 'types/takeshape';
 
 export const navigationResponse: NavigationQueryResponse = {
   navigation: {
+    Button:'',
+   Logo:{
+    path:''
+   },
     messageHtml: 'Get free delivery on orders over $100',
     sections: [
       {

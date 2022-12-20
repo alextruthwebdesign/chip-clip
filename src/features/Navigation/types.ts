@@ -26,6 +26,8 @@ export type NavigationSection = {
 };
 
 export type Navigation = {
+  button:string | null;
+  logo:any;
   message: NavigationMessage;
   sections: NavigationSection[];
   currencies: typeof currencyList;

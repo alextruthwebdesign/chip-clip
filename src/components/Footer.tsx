@@ -22,7 +22,7 @@ function Footer({navigation,SocialsText,Socials,Copyright}:FooterType) {
           <div>
             <p>{SocialsText}</p>
             {Socials.map((social:any,index:number)=>{
-              return <div className='relative'>
+              return <div className='relative' key={index}>
                 <Image  src={getImageUrl(social)} width={24} height={24} alt='image'/>
               </div>
             })}

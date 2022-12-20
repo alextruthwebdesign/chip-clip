@@ -1,4 +1,3 @@
-import Button from 'components/Button/Button';
 import { signedInCheckout } from 'config';
 import { getCheckoutUrl } from 'features/Cart/transforms';
 import { useAtomValue, useSetAtom } from 'jotai';
@@ -8,7 +7,7 @@ import { useCallback, useEffect } from 'react';
 import { CartCreateMutationResponse, CartCreateMutationVariables } from 'types/storefront';
 import { useStorefrontMutation } from 'utils/storefront';
 import { CartCreateMutation } from '../queries.storefront';
-import { cartItemsAtom, cartQuantityAtom, isCartCheckingOutAtom } from '../store';
+import { cartItemsAtom, cartQuantityAtom, cartSubtotalAtom, isCartCheckingOutAtom } from '../store';
 import { getCartVariables } from '../utils';
 
 export const CartCheckout = () => {
@@ -18,6 +17,7 @@ export const CartCheckout = () => {
   const setIsCartCheckingOut = useSetAtom(isCartCheckingOutAtom);
   const quantity = useAtomValue(cartQuantityAtom);
   const items = useAtomValue(cartItemsAtom);
+  const subtotal = useAtomValue(cartSubtotalAtom);
 
   const [setCartMutation, { data }] = useStorefrontMutation<CartCreateMutationResponse, CartCreateMutationVariables>(
     CartCreateMutation
@@ -43,14 +43,13 @@ export const CartCheckout = () => {
   }, [data]);
 
   return (
-    <Button
-      onClick={handleCheckout}
-      disabled={quantity === 0}
-      color="primary"
-      size="large"
-      className="flex justify-center w-full cursor-pointer"
-    >
-      Checkout
-    </Button>
+    <div className='bg-[#222222] rounded-[20px] flex justify-between px-[40px] py-[20px] text-white uppercase text-[20px] cursor-pointer' onClick={()=>{
+      if(quantity === 0)return;
+      handleCheckout()
+    }
+    }>
+      <p className='font-passion'>Checkout</p>
+      <p className='font-passion'>${subtotal}</p>
+    </div>
   );
 };

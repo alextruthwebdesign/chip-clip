@@ -5,12 +5,12 @@ import { Navigation as TNavigation } from './types';
 
 export interface NavigationProps extends TNavigation {}
 
-export const Navigation = ({ message, sections, currencies }: NavigationProps) => {
+export const Navigation = ({ message, sections, currencies,button,logo }: NavigationProps) => {
   return (
     <Fragment>
       <NavigationMobileMenu sections={sections} currencies={currencies} />
       <header className="relative z-10">
-        <NavigationTop message={message} sections={sections} currencies={currencies} />
+        <NavigationTop message={message} sections={sections} currencies={currencies} button={button} logo={logo} />
       </header>
     </Fragment>
   );

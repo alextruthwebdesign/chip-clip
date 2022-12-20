@@ -20,10 +20,10 @@ function Hero({buttonText,image,primaryText,secondaryText}:any) {
             className="shadow-cardShadow rounded-[30px]"
           />
           <div className="heroImage left">
-            <Image src="/images/Group5.png" width={130} height={130} alt="img" />
+            <Image src="/images/group55.png" width={130} height={130} alt="img" />
           </div>
           <div className="heroImage right">
-            <Image src="/images/Group4.png" width={130} height={130} alt="img" />
+            <Image src="/images/group44.png" width={130} height={130} alt="img" />
           </div>
           <svg className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] cursor-pointer' width="124" height="124" viewBox="0 0 124 124" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="62" cy="62" r="62" fill="#FFC943" />

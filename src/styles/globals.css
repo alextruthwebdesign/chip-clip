@@ -86,6 +86,14 @@ p{
 }
 
 
+.cartIcon{
+  @apply relative cursor-pointer;
+}
+
+.cartQuantity{
+  @apply w-[24px] h-[24px] bg-[#FFC943] absolute rounded-full right-[-10px] top-[-10px] flex items-center justify-center font-passion;
+}
+
 .hamburger-menu{
  @apply cursor-pointer block;
  @screen mid {
@@ -98,7 +106,7 @@ p{
  }
 
 .mobile-menu{
-  @apply hidden flex-col items-center fixed w-full h-full top-0 left-0 bg-[#FFC943] pt-[80px] uppercase gap-y-[30px];
+  @apply hidden flex-col items-center fixed w-full h-full top-0 left-0 bg-[#FFC943] pt-[80px] uppercase gap-y-[30px] z-20;
   a{
     @apply text-[24px];
   }

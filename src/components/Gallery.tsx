@@ -13,6 +13,7 @@ function Gallery({ Gallery, Title }: any) {
                 className={
                   index === 0 ? 'relative md:w-[33%] lg:w-[50%] h-full' : 'relative md:w-[33%] lg:w-[25%] h-full'
                 }
+                key={index}
               >
                 <Image src={getImageUrl(image)} fill alt="image" className="rounded-[30px] object-cover" />
               </div>
@@ -28,6 +29,7 @@ function Gallery({ Gallery, Title }: any) {
                     ? 'relative md:w-[33%] lg:w-[25%] h-full'
                     : 'relative md:w-[33%] lg:w-[50%] h-full'
                 }
+                key={index}
               >
                 <Image src={getImageUrl(image)} fill alt="image" className="rounded-[30px] object-cover" />
               </div>

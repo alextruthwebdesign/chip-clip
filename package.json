@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "prebuild": "./scripts/prebuild.sh",
-    "build": "export NEXT_PUBLIC_BRANCH_TAKESHAPE_API_URL=\"$(cat .current-branch-url)\" && npm run graphql:typegen && next build",
+    "build": "next build",
     "postbuild": "next-sitemap",
     "build-storybook": "build-storybook",
     "cypress:open": "cypress open",
