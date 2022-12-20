@@ -3,6 +3,11 @@ import { gql } from '@apollo/client';
 export const FooterQuery = gql`
   query FooterQuery {
     footer: getFooter {
+      Copyright
+      SocialsText
+      Socials{
+        path
+      }
       navigation {
         sections {
           name

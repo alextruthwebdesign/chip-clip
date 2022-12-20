@@ -3,6 +3,10 @@ import { gql } from '@apollo/client';
 export const NavigationQuery = gql`
   query NavigationQuery {
     navigation: getNavigation {
+      Button
+      Logo{
+        path
+      }
       messageHtml
       sections {
         name

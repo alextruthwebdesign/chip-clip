@@ -11,7 +11,7 @@ function Hero({buttonText,image,primaryText,secondaryText}:any) {
           <p>{secondaryText}</p>
           <button className="secondaryBtn mt-[40px]">{buttonText}</button>
         </div>
-        <div className="relative">
+        <div className="relative rounded-[30px]">
           <Image
             src={getImageUrl(image)}
             width={600}

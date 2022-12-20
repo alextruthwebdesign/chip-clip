@@ -53,6 +53,8 @@ export function getNavigation(response: NavigationQueryResponse): Navigation | n
   return {
     message: navigation.messageHtml?.replace(/<\/?p>/g, '') ?? '',
     sections: getNavigationLinksSections(response?.navigation?.sections) ?? [],
-    currencies: [...currencyList]
+    currencies: [...currencyList],
+    button:navigation.Button,
+    logo:navigation.Logo
   };
 }

@@ -1,3 +1,4 @@
+import { getImageUrl } from '@takeshape/routing';
 import { HeaderType, Section } from "components/types/HeaderTypes";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,13 +7,14 @@ import { useState } from "react";
 
 
 
-function Header({ sections }:HeaderType){
+function Header({ sections,Button,logo}:HeaderType){
+  
     const [openMenu,setOpenMenu] = useState(false);
 
     return <div className="px-[30px]">
         <div className="header-container">
             <div className="w-[170px] h-[190px] relative translate-y-[20px]">
-                <Image src='/images/clip-logo.png' fill alt='logo'/>
+                <Image src={getImageUrl(logo)} fill alt='logo'/>
             </div>
             <div className={`header`}>
                 {sections.map((section:any,index:number)=>{
@@ -36,7 +38,7 @@ function Header({ sections }:HeaderType){
                    {section?.name}
                 </Link>
                 })}
-                <button className='secondaryBtn'>order now</button>
+                <button className='secondaryBtn'>{Button}</button>
                 <svg width="47" height="37" viewBox="0 0 47 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 34.5C21 35.7435 22.008 36.75 23.25 36.75C24.492 36.75 25.5 35.7435 25.5 34.5C25.5 33.258 24.492 32.25 23.25 32.25C22.008 32.25 21 33.258 21 34.5ZM15.75 32.25C16.992 32.25 18 33.2565 18 34.5C18 35.7435 16.992 36.75 15.75 36.75C14.508 36.75 13.5 35.7435 13.5 34.5C13.5 33.258 14.508 32.25 15.75 32.25ZM6.294 6.75L11.4405 27.75H14.5935L10.782 11.25H36L29.0775 30.75H9.219L4.008 9.75H0.740997L0 6.75H6.294Z" fill="#222222"/>
                     <circle cx="35" cy="12.25" r="12" fill="white"/>
