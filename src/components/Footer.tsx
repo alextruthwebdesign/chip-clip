@@ -1,9 +1,9 @@
 import { getImageUrl } from '@takeshape/routing';
-import { FooterType, Section } from 'components/types/FooterTypes';
+import { Section } from 'components/types/FooterTypes';
 import Image from 'next/image';
 import Link from 'next/link';
 
-function Footer({navigation,SocialsText,Socials,Copyright}:FooterType) {
+function Footer({navigation,SocialsText,Socials,Copyright}:any) {
 
   return (
     <div className='py-[120px] px-[30px] bg-[#222222]'>

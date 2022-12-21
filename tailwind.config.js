@@ -34,7 +34,8 @@ module.exports = {
       screens:{
         'mid':'970px',
         'small':'570px',
-        's':'450px'
+        's':'450px',
+        'large':'1100px'
       },
       boxShadow:{
         cardShadow:'15px 15px 0px #222222'
